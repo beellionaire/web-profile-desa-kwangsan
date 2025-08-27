@@ -15,7 +15,8 @@
 </div>
 @endif
 
-<form action="{{ route('galeri.update', $galeri->id) }}" method="POST" enctype="multipart/form-data" class="space-y-6">
+<form action="{{ route('admin.galeri.update', $galeri->id) }}" method="POST" enctype="multipart/form-data"
+    class="space-y-6">
     @csrf
     @method('PUT')
 
@@ -47,4 +48,9 @@
         <button type="submit" class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">
             Perbarui
         </button>
-        <a href="{{ route('galeriAdmin') }}" class="px-4 py-2 bg-gray-400 text-white rounded hover:bg-gray-500">
+        <a href="{{ route('admin.galeriAdmin') }}" class="px-4 py-2 bg-gray-400 text-white rounded hover:bg-gray-500">
+            Batal
+        </a>
+    </div>
+</form>
+@endsection

@@ -14,7 +14,7 @@ class StrukturOrganisasiController extends Controller
      */
     public function strukturAdmin()
     {
-        $struktur = StrukturOrganisasi::latest()->paginate(10);
+        $struktur = StrukturOrganisasi::all();
         return view('admin.struktur.struktur_organisasi', compact('struktur'));
     }
 

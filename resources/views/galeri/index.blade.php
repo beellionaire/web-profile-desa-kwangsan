@@ -21,11 +21,12 @@
                     class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
                 <div
                     class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
-                    <div class="translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                    <div class="translate-y-4 group-hover:translate-y-0 transition-transform duration-300 text-left">
                         <h3 class="text-white text-xl font-bold">{{ $galeri->judul }}</h3>
                         <p class="text-white/80 mt-1">{{ $galeri->tanggal ?? $galeri->created_at->format('F Y') }}</p>
                     </div>
                 </div>
+
             </div>
             @empty
             <p class="text-gray-500 col-span-full">Belum ada foto di galeri.</p>

@@ -21,9 +21,8 @@
                 @forelse ($struktur as $item)
                 <div class="group">
                     <div class="relative overflow-hidden rounded-xl mb-4">
-                        <img src="{{ $item->foto ? asset('storage/' . $item->foto) : asset('/images/default.jpg') }}"
-                            alt="Foto {{ $item->nama }}"
-                            class="w-full aspect-[3/4] object-cover object-center transform group-hover:scale-105 transition duration-300 ease-in-out">
+                        <img src="{{ $item->foto ? asset('storage/' . $item->foto) : asset('images/default.png') }}"
+                            alt="Foto {{ $item->nama }}" class="w-full aspect-[3/4] object-contain object-center">
                     </div>
                     <div class="text-center">
                         <h3 class="text-xl font-bold text-gray-800">{{ $item->nama }}</h3>

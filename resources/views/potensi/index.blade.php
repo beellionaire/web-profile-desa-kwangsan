@@ -1,75 +1,50 @@
-<section class="bg-blue-50">
-    <div class="mx-auto min-h-screen w-full py-24 lg:max-w-[1500px]">
+@extends('layouts.app')
 
-        <!-- Judul -->
+@section('content')
+<section class="bg-blue-50">
+    <div class="mx-auto min-h-screen w-screen py-32">
         <div class="text-center">
-            <h1 class="mb-4 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl">
+            <h1
+                class="mb-4 text-4xl font-extrabold text-center tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl">
                 Potensi Desa
             </h1>
-            <p class="mb-8 text-lg font-normal text-gray-500 lg:text-xl sm:px-16 lg:px-48">
-                Here at Flowbite we focus on markets where technology, innovation, and capital can unlock long-term
-                value and drive economic growth.
+            <p class="mb-8 text-lg text-gray-500">
+                Informasi tentang potensi desa yang dapat mendukung pembangunan dan kesejahteraan masyarakat.
             </p>
         </div>
 
-        <!-- Konten Kartu -->
-        <div
-            class="flex flex-col sm:flex-row flex-wrap justify-center items-center gap-4 p-4 bg-slate-100 max-w-[1300px] mx-auto">
+        <div class="flex flex-col sm:flex-row flex-wrap justify-center items-center gap-6 p-6 bg-slate-100 rounded-lg">
+            @forelse($potensis as $item)
+            <a href="{{ route('potensi.detail', $item->slug) }}"
+                class="group relative block bg-black rounded-lg overflow-hidden w-full sm:w-[300px]">
+                <img src="{{ $item->gambar ? asset('storage/' . $item->gambar) : asset('images/default.png') }}"
+                    alt="{{ $item->judul }}"
+                    class="absolute inset-0 h-full w-full object-cover opacity-75 transition group-hover:opacity-50 rounded-lg" />
 
-            <!-- Card 1 -->
-            <a href="#" class="group relative block bg-black rounded-lg overflow-hidden">
-                <img alt=""
-                    src="https://images.pexels.com/photos/771742/pexels-photo-771742.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
-                    class="absolute inset-0 h-full w-full rounded-lg object-cover opacity-75 transition-opacity group-hover:opacity-50" />
                 <div class="relative p-4 sm:p-6 lg:p-8">
-                    <p class="text-sm font-medium tracking-widest text-pink-500 uppercase">Developer</p>
-                    <p class="text-xl font-bold text-white sm:text-2xl">Abdul Baset</p>
-                    <div class="mt-32 sm:mt-48 lg:mt-64">
+                    <p class="text-sm font-extrabold tracking-widest text-blue-600 uppercase">
+                        <span class="bg-yellow-300 text-gray-800 px-2 py-1 rounded">
+                            {{ $item->kategori ?? 'Potensi Desa' }}
+                        </span>
+                    </p>
+                    <p class="text-xl font-bold text-white sm:text-2xl">{{ $item->judul }}</p>
+
+                    <div class="mt-32 sm:mt-40 lg:mt-52">
                         <div
-                            class="translate-y-8 transform opacity-0 transition-all group-hover:translate-y-0 group-hover:opacity-100">
+                            class="translate-y-8 transform opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
                             <p class="text-sm text-white">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                {{ Str::limit($item->deskripsi, 100, '...') }}
                             </p>
                         </div>
                     </div>
                 </div>
             </a>
-
-            <!-- Card 2 -->
-            <a href="#" class="group relative block bg-black rounded-lg overflow-hidden">
-                <img alt="" src="https://images.pexels.com/photos/14653174/pexels-photo-14653174.jpeg"
-                    class="absolute inset-0 h-full w-full rounded-lg object-cover opacity-75 transition-opacity group-hover:opacity-50" />
-                <div class="relative p-4 sm:p-6 lg:p-8">
-                    <p class="text-sm font-medium tracking-widest text-pink-500 uppercase">Developer</p>
-                    <p class="text-xl font-bold text-white sm:text-2xl">Tony Wayne</p>
-                    <div class="mt-32 sm:mt-48 lg:mt-64">
-                        <div
-                            class="translate-y-8 transform opacity-0 transition-all group-hover:translate-y-0 group-hover:opacity-100">
-                            <p class="text-sm text-white">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </a>
-
-            <!-- Card 3 -->
-            <a href="#" class="group relative block bg-black rounded-lg overflow-hidden">
-                <img alt="" src="https://images.unsplash.com/photo-1511367461989-f85a21fda167?fm=jpg&q=60&w=3000"
-                    class="absolute inset-0 h-full w-full rounded-lg object-cover opacity-75 transition-opacity group-hover:opacity-50" />
-                <div class="relative p-4 sm:p-6 lg:p-8">
-                    <p class="text-sm font-medium tracking-widest text-pink-500 uppercase">Developer</p>
-                    <p class="text-xl font-bold text-white sm:text-2xl">Billu Mao</p>
-                    <div class="mt-32 sm:mt-48 lg:mt-64">
-                        <div
-                            class="translate-y-8 transform opacity-0 transition-all group-hover:translate-y-0 group-hover:opacity-100">
-                            <p class="text-sm text-white">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </a>
+            @empty
+            <p class="text-gray-500 text-center w-full">Belum ada data potensi desa.</p>
+            @endforelse
         </div>
+
+        <div class="mt-8">{{ $potensis->links() }}</div>
     </div>
 </section>
+@endsection

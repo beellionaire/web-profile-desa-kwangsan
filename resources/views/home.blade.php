@@ -3,48 +3,41 @@
 @section('content')
 
 <!-- Hero Section -->
-
 <section id="hero" class="relative w-full h-screen m-0 p-0">
-    <div class="h-screen w-full bg-center bg-cover bg-no-repeat bg-gray-700 bg-blend-multiply"
-        style="background-image: url('{{ asset('images/hero.jpg') }}');">
+    <div class="h-screen w-full bg-center bg-cover bg-no-repeat bg-gray-400 bg-blend-multiply"
+        style="background-image: url('{{ asset('images/hero.png') }}');">
         <div class="flex items-center justify-center h-screen text-center text-white px-4">
             <div>
-                <h1 class="text-3xl md:text-5xl font-extrabold leading-tight">
-                    Transparansi & Akuntabilitas
+                <h1 class="text-4xl lg:text-7xl font-extrabold leading-tight lg:max-w-[900px]">
+                    Selamat Datang
                 </h1>
-                <p class="mt-6 text-base md:text-lg font-medium">
-                    Kami berkomitmen melayani masyarakat
+                <h1 class="text-4xl lg:text-7xl font-extrabold leading-tight lg:max-w-[900px]">
+                    di Desa Kwangsan
+                </h1>
+                <p class="mt-6 text-lg lg:text-3xl font-semibold">
+                    Informasi terkini seputar Desa Kwangsan
                 </p>
             </div>
         </div>
     </div>
 </section>
-
-
 <!-- Hero Section -->
-
 
 <!-- Sambutan Kepala Desa -->
 <section class="bg-slate-100">
-
     <div class="mx-auto flex flex-col h-[900px] w-screen items-center justify-center py-9 px-6">
-
-        <!-- Header -->
         <div class="text-center mb-12 max-w-3xl">
-            <h1 class="mb-4 text-4xl font-extrabold tracking-tight leading-none
-                       text-gray-900 md:text-5xl lg:text-6xl">
+            <h1 class="mb-4 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl">
                 Sambutan Kepala Desa
             </h1>
         </div>
 
-        <!-- Konten (Foto + Teks) -->
         <div class="sm:flex items-center max-w-screen-xl">
-
             <!-- Foto Kepala Desa -->
             <div class="sm:w-1/2 p-10 flex justify-center">
                 <div class="image text-center">
-                    <img src="{{ asset('images/kades.jpg') }}"
-                        class="rounded-full w-[400px] h-[400px] object-cover shadow-lg">
+                    <img src="{{ $profil && $profil->foto ? asset('storage/' . $profil->foto) : asset('images/kades.jpg') }}"
+                        class="w-48 h-48 sm:w-[400px] sm:h-[400px] object-cover shadow-lg rounded-full">
                 </div>
             </div>
 
@@ -52,51 +45,21 @@
             <div class="sm:w-1/2 p-5 flex justify-center items-center">
                 <div class="text text-center sm:text-left w-full">
                     <h2 class="my-4 font-bold text-3xl sm:text-4xl">
-                        ADVENTUS EKO P. LENAMA
+                        {{ $profil ? $profil->nama_desa : 'Nama Desa Belum Tersedia' }}
                     </h2>
-                    <span class="text-gray-500 border-b-2 border-indigo-600 capitalize font-bold text-xl">
+                    <span class="text-gray-500 border-indigo-600 capitalize font-bold text-xl">
                         Kepala Desa Kwangsan
                     </span>
                     <p class="text-gray-700 mt-9 max-h-[250px] overflow-y-auto pr-2">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                        Aliquid, commodi doloremque, fugiat illum magni minus nisi nulla
-                        numquam obcaecati placeat quia, repellat tempore voluptatum.
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                        Aliquid, commodi doloremque, fugiat illum magni minus nisi nulla
-                        numquam obcaecati placeat quia, repellat tempore voluptatum.
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                        Aliquid, commodi doloremque, fugiat illum magni minus nisi nulla
-                        numquam obcaecati placeat quia, repellat tempore voluptatum.
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                        Aliquid, commodi doloremque, fugiat illum magni minus nisi nulla
-                        numquam obcaecati placeat quia, repellat tempore voluptatum.
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                        Aliquid, commodi doloremque, fugiat illum magni minus nisi nulla
-                        numquam obcaecati placeat quia, repellat tempore voluptatum.
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                        Aliquid, commodi doloremque, fugiat illum magni minus nisi nulla
-                        numquam obcaecati placeat quia, repellat tempore voluptatum.
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                        Aliquid, commodi doloremque, fugiat illum magni minus nisi nulla
-                        numquam obcaecati placeat quia, repellat tempore voluptatum.
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                        Aliquid, commodi doloremque, fugiat illum magni minus nisi nulla
-                        numquam obcaecati placeat quia, repellat tempore voluptatum.
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                        Aliquid, commodi doloremque, fugiat illum magni minus nisi nulla
-                        numquam obcaecati placeat quia, repellat tempore voluptatum.
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                        Aliquid, commodi doloremque, fugiat illum magni minus nisi nulla
-                        numquam obcaecati placeat quia, repellat tempore voluptatum.
+                        {{ $profil ? $profil->kata_sambutan : 'Kata sambutan belum tersedia.' }}
                     </p>
                 </div>
             </div>
-
         </div>
     </div>
-
 </section>
 <!-- Sambutan Kepala Desa -->
+
 
 
 
@@ -109,41 +72,35 @@
         <p class="mb-8 text-lg font-normal text-gray-500 lg:text-xl sm:px-16 lg:px-48 dark:text-gray-400">
             Menampilkan Peta Desa dengan Interest Point
         </p>
-
         <div id="map" class="w-11/12 h-[500px] mx-auto rounded-lg shadow-lg z-0"></div>
-
     </div>
 </section>
-
 <!-- Peta Desa -->
 
 <!-- Struktur Organisasi -->
 <section class="bg-blue-50">
-    <div class="mx-auto min-h-screen w-screen text-center py-24 lg:max-w-[1500px]">
-        <h1 class="mb-4 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl">
+    <div class="mx-auto min-h-screen w-screen text-center py-16 px-4 sm:px-6 lg:px-24 lg:max-w-[1500px]">
+        <h1
+            class="mb-4 text-3xl sm:text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl">
             Struktur Perangkat Desa
         </h1>
-        <p class="mb-8 text-lg font-normal text-gray-500 lg:text-xl sm:px-16 lg:px-48">
+        <p class="mb-8 text-base sm:text-lg font-normal text-gray-500 lg:text-xl sm:px-8 lg:px-48">
             Susunan perangkat desa yang berperan dalam pembangunan dan pelayanan masyarakat.
         </p>
 
-        <div class="container mx-auto max-w-7xl mt-16 mb-16">
+        <div class="container mx-auto max-w-7xl mt-12 mb-16 px-2 sm:px-4">
             <!-- Team Grid -->
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
                 @forelse($struktur as $item)
                 <div class="group">
                     <div class="relative overflow-hidden rounded-xl mb-4">
-                        @if($item->foto)
-                        <img src="{{ asset('storage/' . $item->foto) }}" alt="{{ $item->nama }}"
-                            class="w-full aspect-[3/4] object-cover object-center transform group-hover:scale-105 transition duration-300 ease-in-out">
-                        @else
-                        <img src="https://via.placeholder.com/300x400?text=No+Image" alt="{{ $item->nama }}"
-                            class="w-full aspect-[3/4] object-cover object-center">
-                        @endif
+                        <img src="{{ $item->foto ? asset('storage/' . $item->foto) : asset('images/default.png') }}"
+                            alt="Foto {{ $item->nama }}"
+                            class="w-full aspect-[3/4] object-contain object-center rounded-lg shadow">
                     </div>
                     <div class="text-center">
-                        <h3 class="text-xl font-bold text-gray-800">{{ $item->nama }}</h3>
-                        <p class="text-indigo-600 font-medium">{{ $item->jabatan }}</p>
+                        <h3 class="text-lg sm:text-xl font-bold text-gray-800">{{ $item->nama }}</h3>
+                        <p class="text-indigo-600 font-medium text-sm sm:text-base">{{ $item->jabatan }}</p>
                     </div>
                 </div>
                 @empty
@@ -154,8 +111,70 @@
 
         <div class="flex flex-col space-y-4 sm:flex-row sm:justify-center sm:space-y-0">
             <a href="{{ route('struktur_organisasi.index') }}"
-                class="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-white rounded-lg bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300">
-                Selengkapnya
+                class="inline-flex justify-center items-center py-3 px-6 text-base font-medium text-center text-white rounded-lg bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 transition-all duration-300">
+                Lihat Semua
+                <svg class="w-4 h-4 ms-2 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                    fill="none" viewBox="0 0 14 10">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M1 5h12m0 0L9 1m4 4L9 9" />
+                </svg>
+            </a>
+        </div>
+    </div>
+</section>
+<!-- Struktur Organisasi -->
+
+
+<!-- Potensi Desa -->
+<section class="bg-blue-50">
+    <div class="mx-auto h-[750px] w-screen py-24">
+
+        <!-- Judul -->
+        <div class="text-center">
+            <h1 class="mb-4 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl">
+                Potensi Desa
+            </h1>
+            <p class="mb-8 text-lg font-normal text-gray-500 lg:text-xl sm:px-16 lg:px-48">
+                Informasi tentang potensi desa yang mendukung pembangunan dan kesejahteraan masyarakat.
+            </p>
+        </div>
+
+        <!-- Konten Kartu -->
+        <div class="flex flex-col sm:flex-row flex-wrap justify-center items-center gap-4 p-4 bg-blue-50 mx-auto">
+
+            @forelse($potensi as $item)
+            <a href="{{ route('potensi.detail', $item->slug) }}"
+                class="group relative block bg-black rounded-lg overflow-hidden w-full sm:w-[300px]">
+                <img alt="{{ $item->judul }}"
+                    src="{{ $item->gambar ? asset('storage/' . $item->gambar) : asset('images/default.png') }}"
+                    class="absolute inset-0 h-full w-full rounded-lg object-cover opacity-75 transition-opacity group-hover:opacity-50" />
+                <div class="relative p-4 sm:p-6 lg:p-8">
+                    <p class="text-sm font-extrabold tracking-widest text-blue-600 uppercase">
+                        <span class="bg-yellow-300 text-gray-800 px-2 py-1 rounded">
+                            {{ $item->kategori ?? 'Potensi Desa' }}
+                        </span>
+                    </p>
+
+                    <p class="text-xl font-bold text-white sm:text-2xl">{{ $item->judul }}</p>
+                    <div class="mt-32 sm:mt-48 lg:mt-64">
+                        <div
+                            class="translate-y-8 transform opacity-0 transition-all group-hover:translate-y-0 group-hover:opacity-100">
+                            <p class="text-sm font-semibold text-white">
+                                {{ Str::limit($item->deskripsi, 100, '...') }}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </a>
+            @empty
+            <p class="text-gray-500 text-center w-full">Belum ada potensi desa.</p>
+            @endforelse
+        </div>
+
+        <div class="flex flex-col space-y-4 sm:flex-row sm:justify-center sm:space-y-0 mt-14">
+            <a href="{{ route('potensi.index') }}"
+                class="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-white rounded-lg bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 transition-all duration-300">
+                Lihat Semua
                 <svg class="w-3.5 h-3.5 ms-2 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
                     fill="none" viewBox="0 0 14 10">
                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -165,35 +184,53 @@
         </div>
     </div>
 </section>
+<!-- Potensi Desa -->
 
-<!-- Struktur Organisasi -->
+<!-- Produk Desa -->
+<section class="bg-blue-50">
+    <div class="mx-auto w-full max-w-7xl text-center py-24 px-4">
+        <!-- Judul -->
+        <h1 class="mb-4 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl">
+            UMKM Desa
+        </h1>
+        <p class="mb-8 text-lg font-normal text-gray-500 lg:text-xl sm:px-16 lg:px-48">
+            Kumpulan UMKM yang ada di Desa Kwangsan untuk mendukung perekonomian masyarakat.
+        </p>
 
-<!-- Administrasi -->
-<!-- <section class="bg-blue-500">
-        <div class="mx-auto min-h-screen w-screen text-center py-12 lg:py-24">
-            <h1 class="mb-4 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl">
-                Administrasi</h1>
-            <p class="mb-8 text-lg font-normal text-gray-500 lg:text-xl sm:px-16 lg:px-48 dark:text-gray-400">Here at
-                Flowbite we focus on markets where technology, innovation, and capital can unlock long-term value and
-                drive economic growth.</p>
-            <div class="flex flex-col space-y-4 sm:flex-row sm:justify-center sm:space-y-0">
-                <a href="#"
-                    class="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-white rounded-lg bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-900">
-                    Get started
-                    <svg class="w-3.5 h-3.5 ms-2 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                        fill="none" viewBox="0 0 14 10">
-                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M1 5h12m0 0L9 1m4 4L9 9" />
-                    </svg>
-                </a>
-                <a href="#"
-                    class="py-3 px-5 sm:ms-4 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">
-                    Learn more
+        <!-- Grid UMKM -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 justify-items-center mt-10 mb-5">
+            @forelse($umkms->take(4) as $umkm)
+            <div
+                class="w-72 bg-white shadow-md rounded-xl overflow-hidden duration-500 hover:scale-105 hover:shadow-xl">
+                <a href="{{ route('belanja.show', $umkm->id) }}">
+                    <img src="{{ $umkm->foto ? asset('storage/' . $umkm->foto) : 'https://via.placeholder.com/300x400?text=No+Image' }}"
+                        alt="{{ $umkm->nama }}" class="h-80 w-72 object-cover" />
+                    <div class="px-4 py-3">
+                        <p class="text-lg font-bold text-black capitalize p-2">
+                            {{ $umkm->nama }}
+                        </p>
+                    </div>
                 </a>
             </div>
+            @empty
+            <p class="text-gray-500 col-span-full">Belum ada data UMKM.</p>
+            @endforelse
         </div>
-    </section> -->
-<!-- Administrasi -->
+
+        <div class="flex flex-col space-y-4 sm:flex-row sm:justify-center sm:space-y-0 mt-14">
+            <a href="{{ route('belanja.index') }}"
+                class="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-white rounded-lg bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 transition-all duration-300">
+                Lihat Semua
+                <svg class="w-3.5 h-3.5 ms-2 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                    fill="none" viewBox="0 0 14 10">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M1 5h12m0 0L9 1m4 4L9 9" />
+                </svg>
+            </a>
+        </div>
+    </div>
+</section>
+<!-- Produk Desa -->
 
 
 <!-- Berita Desa -->
@@ -236,8 +273,8 @@
 
         <div class="flex flex-col space-y-4 sm:flex-row sm:justify-center sm:space-y-0">
             <a href="{{ route('berita.index') }}"
-                class="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-white rounded-lg bg-blue-700 hover:bg-blue-800">
-                Selengkapnya
+                class="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-white rounded-lg bg-blue-700 hover:bg-blue-800 transition-all duration-300">
+                Lihat Semua
                 <svg class="w-3.5 h-3.5 ms-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                         d="M1 5h12m0 0L9 1m4 4L9 9" />
@@ -246,133 +283,7 @@
         </div>
     </div>
 </section>
-
 <!-- Berita Desa -->
-
-<!-- Potensi Desa -->
-
-<section class="bg-blue-50">
-    <div class="mx-auto h-[750px] w-full py-24 lg:max-w-[1500px]">
-
-        <!-- Judul -->
-        <div class="text-center">
-            <h1 class="mb-4 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl">
-                Potensi Desa
-            </h1>
-            <p class="mb-8 text-lg font-normal text-gray-500 lg:text-xl sm:px-16 lg:px-48">
-                Here at Flowbite we focus on markets where technology, innovation, and capital can unlock long-term
-                value and drive economic growth.
-            </p>
-        </div>
-
-        <!-- Konten Kartu -->
-        <div
-            class="flex flex-col sm:flex-row flex-wrap justify-center items-center gap-4 p-4 bg-slate-100 max-w-[1300px] mx-auto">
-
-            <!-- Card 1 -->
-            <a href="#" class="group relative block bg-black rounded-lg overflow-hidden">
-                <img alt=""
-                    src="https://images.pexels.com/photos/771742/pexels-photo-771742.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
-                    class="absolute inset-0 h-full w-full rounded-lg object-cover opacity-75 transition-opacity group-hover:opacity-50" />
-                <div class="relative p-4 sm:p-6 lg:p-8">
-                    <p class="text-sm font-medium tracking-widest text-pink-500 uppercase">Developer</p>
-                    <p class="text-xl font-bold text-white sm:text-2xl">Abdul Baset</p>
-                    <div class="mt-32 sm:mt-48 lg:mt-64">
-                        <div
-                            class="translate-y-8 transform opacity-0 transition-all group-hover:translate-y-0 group-hover:opacity-100">
-                            <p class="text-sm text-white">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </a>
-
-            <!-- Card 2 -->
-            <a href="#" class="group relative block bg-black rounded-lg overflow-hidden">
-                <img alt="" src="https://images.pexels.com/photos/14653174/pexels-photo-14653174.jpeg"
-                    class="absolute inset-0 h-full w-full rounded-lg object-cover opacity-75 transition-opacity group-hover:opacity-50" />
-                <div class="relative p-4 sm:p-6 lg:p-8">
-                    <p class="text-sm font-medium tracking-widest text-pink-500 uppercase">Developer</p>
-                    <p class="text-xl font-bold text-white sm:text-2xl">Tony Wayne</p>
-                    <div class="mt-32 sm:mt-48 lg:mt-64">
-                        <div
-                            class="translate-y-8 transform opacity-0 transition-all group-hover:translate-y-0 group-hover:opacity-100">
-                            <p class="text-sm text-white">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </a>
-
-            <!-- Card 3 -->
-            <a href="#" class="group relative block bg-black rounded-lg overflow-hidden">
-                <img alt="" src="https://images.unsplash.com/photo-1511367461989-f85a21fda167?fm=jpg&q=60&w=3000"
-                    class="absolute inset-0 h-full w-full rounded-lg object-cover opacity-75 transition-opacity group-hover:opacity-50" />
-                <div class="relative p-4 sm:p-6 lg:p-8">
-                    <p class="text-sm font-medium tracking-widest text-pink-500 uppercase">Developer</p>
-                    <p class="text-xl font-bold text-white sm:text-2xl">Billu Mao</p>
-                    <div class="mt-32 sm:mt-48 lg:mt-64">
-                        <div
-                            class="translate-y-8 transform opacity-0 transition-all group-hover:translate-y-0 group-hover:opacity-100">
-                            <p class="text-sm text-white">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </a>
-        </div>
-    </div>
-</section>
-
-<!-- Potensi Desa -->
-
-<!-- Produk Desa -->
-<section class="bg-blue-50">
-    <div class="mx-auto w-full max-w-7xl text-center py-24 px-4">
-        <!-- Judul -->
-        <h1 class="mb-4 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl">
-            UMKM Desa
-        </h1>
-        <p class="mb-8 text-lg font-normal text-gray-500 lg:text-xl sm:px-16 lg:px-48">
-            Kumpulan UMKM yang ada di Desa Kwangsan untuk mendukung perekonomian masyarakat.
-        </p>
-
-        <!-- Grid UMKM -->
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 justify-items-center mt-10 mb-5">
-            @forelse($umkms->take(4) as $umkm)
-            <div
-                class="w-72 bg-white shadow-md rounded-xl overflow-hidden duration-500 hover:scale-105 hover:shadow-xl">
-                <a href="{{ route('belanja.show', $umkm->id) }}">
-                    <img src="{{ $umkm->foto ? asset('storage/' . $umkm->foto) : 'https://via.placeholder.com/300x400?text=No+Image' }}"
-                        alt="{{ $umkm->nama }}" class="h-80 w-72 object-cover" />
-                    <div class="px-4 py-3">
-                        <p class="text-lg font-bold text-black truncate capitalize">
-                            {{ $umkm->nama }}
-                        </p>
-                        <p class="text-sm text-gray-600 mt-2 truncate">
-                            {{ Str::limit(strip_tags($umkm->deskripsi), 60, '...') }}
-                        </p>
-                    </div>
-                </a>
-            </div>
-            @empty
-            <p class="text-gray-500 col-span-full">Belum ada data UMKM.</p>
-            @endforelse
-        </div>
-
-        <!-- Tombol Lihat Semua -->
-        <div class="mt-10">
-            <a href="{{ route('belanja.index') }}"
-                class="px-6 py-3 bg-purple-600 text-white rounded-lg shadow hover:bg-purple-700 transition">
-                Lihat Semua UMKM
-            </a>
-        </div>
-    </div>
-</section>
-<!-- Produk Desa -->
 
 <!-- Galeri Desa -->
 <section class="py-20 bg-white">
@@ -391,9 +302,10 @@
                 <img src="{{ $item->foto ? asset('storage/' . $item->foto) : 'https://via.placeholder.com/400x400?text=No+Image' }}"
                     alt="{{ $item->judul }}"
                     class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
-                <div
-                    class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
-                    <div class="translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent
+           opacity-0 group-hover:opacity-100 transition-opacity duration-300
+           flex items-end justify-start p-6">
+                    <div class="translate-y-4 group-hover:translate-y-0 transition-transform duration-300 text-left">
                         <h3 class="text-white text-xl font-bold">{{ $item->judul }}</h3>
                         <p class="text-white/80 mt-1">
                             {{ $item->tanggal ? \Carbon\Carbon::parse($item->tanggal)->translatedFormat('F Y') :
@@ -401,6 +313,7 @@
                         </p>
                     </div>
                 </div>
+
             </div>
             @empty
             <p class="text-gray-500 col-span-full">Belum ada foto di galeri.</p>
@@ -409,8 +322,8 @@
 
         <div class="flex flex-col space-y-4 sm:flex-row sm:justify-center sm:space-y-0 mt-12">
             <a href="{{ route('galeri.index') }}"
-                class="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-white rounded-lg bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300">
-                Selengkapnya
+                class="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-white rounded-lg bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 transition-all duration-300">
+                Lihat Semua
                 <svg class="w-3.5 h-3.5 ms-2 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
                     fill="none" viewBox="0 0 14 10">
                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"

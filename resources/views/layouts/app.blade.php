@@ -13,15 +13,14 @@
 <body class="bg-gray-50 min-h-screen w-screen flex flex-col overflow-x-hidden">
 
     <!-- Navbar -->
-
-
-    <nav id="navbar" class="fixed w-full z-50 transition-colors duration-300 bg-green-700">
+    <nav id="navbar" class="fixed w-full z-50 transition-colors duration-300 bg-blue-700">
         <div class="w-screen flex flex-wrap items-center justify-between mx-auto p-6">
             <a href="/" class="flex items-center space-x-3 rtl:space-x-reverse">
+                <img src="{{ asset('images/logo_kab_kra.png') }}" alt="Logo" class="h-10 w-auto">
                 <span class="self-center text-2xl whitespace-nowrap text-white font-bold">Desa Kwangsan</span>
             </a>
             <button data-collapse-toggle="navbar-default" type="button"
-                class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-white rounded-lg md:hidden hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-300"
+                class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-white rounded-lg md:hidden hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-300"
                 aria-controls="navbar-default" aria-expanded="false">
                 <span class="sr-only">Open main menu</span>
                 <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
@@ -31,19 +30,19 @@
             </button>
             <div class="hidden w-full md:block md:w-auto" id="navbar-default">
                 <ul
-                    class="font-medium flex flex-col p-4 md:p-0 mt-4 border border-green-200 rounded-lg bg-transparent md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0">
+                    class="font-medium flex flex-col p-4 md:p-0 mt-4 border border-blue-200 rounded-lg bg-transparent md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0">
                     <li>
                         <a href="{{ route('home') }}" class="block py-2 px-3 text-white hover:text-gray-200"
                             aria-current="page">Home</a>
                     </li>
                     <li>
-                        <a href="{{ route('profil_desa.index') }}"
+                        <a href="{{ route('profilDesa.index') }}"
                             class="block py-2 px-3 text-white hover:text-gray-200">Profil Desa</a>
                     </li>
-                    <li>
+                    {{-- <li>
                         <a href="{{ route('infografis.index') }}"
                             class="block py-2 px-3 text-white hover:text-gray-200">Infografis</a>
-                    </li>
+                    </li> --}}
                     <li>
                         <a href="{{ route('berita.index') }}"
                             class="block py-2 px-3 text-white hover:text-gray-200">Berita</a>
@@ -57,80 +56,38 @@
         </div>
     </nav>
 
-
-
     <!-- Content -->
     <main class="mx-auto flex-grow">
         @yield('content')
     </main>
 
     <!-- Footer -->
+    <footer class="bg-blue-800 text-white">
+        <div class="mx-auto max-w-[1700px] px-6 py-12 grid grid-cols-1 md:grid-cols-4 gap-8">
 
-
-    <footer class="bg-white dark:bg-green-900">
-        <div class="mx-auto w-full px-9 max-w-[1700px] py-12">
-            <div class="md:flex md:justify-between">
-                <div class="mb-6 md:mb-0">
-                    <a href="https://flowbite.com/" class="flex items-center">
-                        <span class="self-center text-2xl font-bold whitespace-nowrap dark:text-white">Desa
-                            Kwangsan</span>
-                    </a>
-                </div>
-                <div class="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-4">
-                    <div>
-                        <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Resources</h2>
-                        <ul class="text-gray-500 dark:text-gray-400 font-medium">
-                            <li class="mb-4">
-                                <a href="https://flowbite.com/" class="hover:underline">Flowbite</a>
-                            </li>
-                            <li>
-                                <a href="https://tailwindcss.com/" class="hover:underline">Tailwind CSS</a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div>
-                        <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Resources</h2>
-                        <ul class="text-gray-500 dark:text-gray-400 font-medium">
-                            <li class="mb-4">
-                                <a href="https://flowbite.com/" class="hover:underline">Flowbite</a>
-                            </li>
-                            <li>
-                                <a href="https://tailwindcss.com/" class="hover:underline">Tailwind CSS</a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div>
-                        <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Follow us</h2>
-                        <ul class="text-gray-500 dark:text-gray-400 font-medium">
-                            <li class="mb-4">
-                                <a href="https://github.com/themesberg/flowbite" class="hover:underline ">Github</a>
-                            </li>
-                            <li>
-                                <a href="https://discord.gg/4eeurUVvTy" class="hover:underline">Discord</a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div>
-                        <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Legal</h2>
-                        <ul class="text-gray-500 dark:text-gray-400 font-medium">
-                            <li class="mb-4">
-                                <a href="#" class="hover:underline">Privacy Policy</a>
-                            </li>
-                            <li>
-                                <a href="#" class="hover:underline">Terms &amp; Conditions</a>
-                            </li>
-                        </ul>
-                    </div>
-
-                </div>
+            <!-- Kolom 1: Logo & Alamat -->
+            <div>
+                <img src="{{ asset('images/logo_kab_kra.png') }}" alt="Logo" class="h-16 mb-4">
+                <h2 class="font-bold text-xl">Pemerintah Desa Kwangsan</h2>
+                <p class="text-sm mt-2">
+                    Jl. Raya Jumapolo-Karanganyar No.KM. 4<br>
+                    Sembuh, Kwangsan, Kec. Jumapolo <br>
+                    Kabupaten Karanganyar <br>
+                    Jawa Tengah 57783
+                </p>
             </div>
-            <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
-            <div class="sm:flex sm:items-center sm:justify-between">
-                <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2023 <a
-                        href="https://flowbite.com/" class="hover:underline">Flowbite™</a>. All Rights Reserved.
-                </span>
-                <div class="flex mt-4 sm:justify-center sm:mt-0">
-                    <a href="#" class="text-gray-500 hover:text-gray-900 dark:hover:text-white">
+
+            <!-- Kolom 2: Hubungi Kami -->
+            <div>
+                <h2 class="font-bold text-lg mb-4">Hubungi Kami</h2>
+                <p class="flex items-center gap-2">(0812) 1234 1234</p>
+                <p class="flex items-center gap-2 mt-2">
+                    <a href="mailto:kersik.marangkay@kukarkab.go.id" class="hover:underline">
+                        desa.kwangsan@gmail.com
+                    </a>
+                </p>
+                <div class="flex gap-4 mt-4">
+                    <a href="#" class="text-white hover:text-gray-900 dark:hover:text-white">
                         <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
                             viewBox="0 0 8 19">
                             <path fill-rule="evenodd"
@@ -139,7 +96,7 @@
                         </svg>
                         <span class="sr-only">Facebook page</span>
                     </a>
-                    <a href="#" class="text-gray-500 hover:text-gray-900 dark:hover:text-white ms-5">
+                    <a href="#" class="text-white hover:text-gray-900 dark:hover:text-white ms-5">
                         <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
                             viewBox="0 0 21 16">
                             <path
@@ -147,7 +104,7 @@
                         </svg>
                         <span class="sr-only">Discord community</span>
                     </a>
-                    <a href="#" class="text-gray-500 hover:text-gray-900 dark:hover:text-white ms-5">
+                    <a href="#" class="text-white hover:text-gray-900 dark:hover:text-white ms-5">
                         <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
                             viewBox="0 0 20 17">
                             <path fill-rule="evenodd"
@@ -156,7 +113,7 @@
                         </svg>
                         <span class="sr-only">Twitter page</span>
                     </a>
-                    <a href="#" class="text-gray-500 hover:text-gray-900 dark:hover:text-white ms-5">
+                    <a href="#" class="text-white hover:text-gray-900 dark:hover:text-white ms-5">
                         <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
                             viewBox="0 0 20 20">
                             <path fill-rule="evenodd"
@@ -165,17 +122,43 @@
                         </svg>
                         <span class="sr-only">GitHub account</span>
                     </a>
-                    <a href="#" class="text-gray-500 hover:text-gray-900 dark:hover:text-white ms-5">
+                    <a href="{{ route('admin.login') }}"
+                        class="text-white hover:text-gray-900 dark:hover:text-white ms-5">
                         <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
                             viewBox="0 0 20 20">
                             <path fill-rule="evenodd"
                                 d="M10 0a10 10 0 1 0 10 10A10.009 10.009 0 0 0 10 0Zm6.613 4.614a8.523 8.523 0 0 1 1.93 5.32 20.094 20.094 0 0 0-5.949-.274c-.059-.149-.122-.292-.184-.441a23.879 23.879 0 0 0-.566-1.239 11.41 11.41 0 0 0 4.769-3.366ZM8 1.707a8.821 8.821 0 0 1 2-.238 8.5 8.5 0 0 1 5.664 2.152 9.608 9.608 0 0 1-4.476 3.087A45.758 45.758 0 0 0 8 1.707ZM1.642 8.262a8.57 8.57 0 0 1 4.73-5.981A53.998 53.998 0 0 1 9.54 7.222a32.078 32.078 0 0 1-7.9 1.04h.002Zm2.01 7.46a8.51 8.51 0 0 1-2.2-5.707v-.262a31.64 31.64 0 0 0 8.777-1.219c.243.477.477.964.692 1.449-.114.032-.227.067-.336.1a13.569 13.569 0 0 0-6.942 5.636l.009.003ZM10 18.556a8.508 8.508 0 0 1-5.243-1.8 11.717 11.717 0 0 1 6.7-5.332.509.509 0 0 1 .055-.02 35.65 35.65 0 0 1 1.819 6.476 8.476 8.476 0 0 1-3.331.676Zm4.772-1.462A37.232 37.232 0 0 0 13.113 11a12.513 12.513 0 0 1 5.321.364 8.56 8.56 0 0 1-3.66 5.73h-.002Z"
                                 clip-rule="evenodd" />
                         </svg>
-                        <span class="sr-only">Dribbble account</span>
+                        <span class="sr-only">Login Admin</span>
                     </a>
                 </div>
             </div>
+
+            <!-- Kolom 3: Nomor Penting -->
+            <div>
+                <h2 class="font-bold text-lg mb-4">Berita</h2>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="#" class="hover:underline">Berita Terkini</a></li>
+                    <li><a href="#" class="hover:underline">Daftar UMKM</a></li>
+                </ul>
+            </div>
+
+            <!-- Kolom 4: Jelajahi -->
+            <div>
+                <h2 class="font-bold text-lg mb-4">Jelajahi</h2>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="#" class="hover:underline">Profil Desa Kwangsan</a></li>
+                    <li><a href="#" class="hover:underline">Visi Misi Desa Kwangsan</a></li>
+                    <li><a href="#" class="hover:underline">Potensi Desa Kwangsan</a></li>
+                    <li><a href="#" class="hover:underline">Galeri Desa Kwangsan</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Copyright -->
+        <div class="text-center text-sm py-4 bg-blue-900">
+            © 2025 KKN 28 Universitas Muhammadiyah Karanganyar™
         </div>
     </footer>
 
@@ -205,15 +188,6 @@
                 <div class="mb-3">
                     <label class="block text-sm font-medium">Nomor Telepon/WA *</label>
                     <input type="text" class="w-full border rounded-lg px-3 py-2" required>
-                </div>
-                <div class="mb-3">
-                    <label class="block text-sm font-medium">Kategori *</label>
-                    <select class="w-full border rounded-lg px-3 py-2" required>
-                        <option value="">Pilih kategori</option>
-                        <option>Pelayanan</option>
-                        <option>Infrastruktur</option>
-                        <option>Lainnya</option>
-                    </select>
                 </div>
                 <div class="mb-3">
                     <label class="block text-sm font-medium">Pengaduan *</label>

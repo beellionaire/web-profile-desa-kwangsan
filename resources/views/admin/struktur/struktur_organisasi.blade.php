@@ -6,7 +6,7 @@
 <h1 class="text-2xl font-bold mb-6">Struktur Organisasi</h1>
 
 <a href="{{ route('admin.struktur.create') }}"
-    class="px-4 py-2 bg-green-600 text-white rounded hover:bg-green-700 mb-4 inline-block">
+    class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-green-700 mb-4 inline-block">
     + Tambah Anggota
 </a>
 

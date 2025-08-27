@@ -3,7 +3,7 @@
 @section('content')
 <section class="bg-white">
     <div class="mx-auto min-h-screen w-screen py-36">
-        <h1 class="mb-4 text-4xl font-extrabold tracking-tight leading-none text-gray-900 text-center">
+        <h1 class="mb-4 text-4xl font-extrabold text-center tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl">
             Berita Desa
         </h1>
         <p class="mb-8 text-lg font-normal text-gray-500 text-center">
@@ -24,8 +24,8 @@
                         <p class="uppercase font-semibold text-xs mb-2.5 text-purple-600">
                             {{ \Carbon\Carbon::parse($berita->tanggal)->translatedFormat('d F Y') }}
                         </p>
-                        <a href="{{ route('berita.detail', $berita->id) }}" class="block mb-3 hover:underline">
-                            <h2 class="text-2xl font-bold leading-6 line-clamp-2 hover:text-purple-700">
+                        <a href="{{ route('berita.detail', $berita->id) }}" class="block mb-3">
+                            <h2 class="text-2xl font-bold leading-6 line-clamp-2">
                                 {{ Str::limit(strip_tags($berita->judul), 70, '...') }}
                             </h2>
                         </a>

@@ -19,37 +19,58 @@
                 </div>
                 <div class="flex flex-col flex-grow px-4 py-4 overflow-y-auto">
                     <nav class="flex-1 space-y-2">
-                        <a href="{{ route('admin.dashboard') }}"
-                            class="flex items-center px-4 py-2 text-sm font-medium rounded-md
-              {{ request()->routeIs('admin.dashboard') ? 'bg-blue-900 text-yellow-300' : 'hover:bg-blue-700 text-white' }}">
+                        <a href="{{ route('admin.dashboard') }}" class="flex items-center px-4 py-2 text-sm font-medium rounded-md
+        {{ request()->routeIs('admin.dashboard') ? 'bg-blue-900 text-yellow-300' : 'hover:bg-blue-700 text-white' }}">
                             Dashboard
                         </a>
                         <a href="{{ route('admin.strukturAdmin') }}"
                             class="flex items-center px-4 py-2 text-sm font-medium rounded-md
-              {{ request()->routeIs('admin.strukturAdmin') ? 'bg-blue-900 text-yellow-300' : 'hover:bg-blue-700 text-white' }}">
+        {{ request()->routeIs('admin.strukturAdmin') ? 'bg-blue-900 text-yellow-300' : 'hover:bg-blue-700 text-white' }}">
                             Struktur Organisasi
                         </a>
                         <a href="{{ route('admin.berita.index') }}"
                             class="flex items-center px-4 py-2 text-sm font-medium rounded-md
-              {{ request()->routeIs('admin.berita.index') ? 'bg-blue-900 text-yellow-300' : 'hover:bg-blue-700 text-white' }}">
+        {{ request()->routeIs('admin.berita.index') ? 'bg-blue-900 text-yellow-300' : 'hover:bg-blue-700 text-white' }}">
                             Berita
                         </a>
                         <a href="{{ route('admin.belanjaAdmin') }}"
                             class="flex items-center px-4 py-2 text-sm font-medium rounded-md
-              {{ request()->routeIs('admin.belanjaAdmin') ? 'bg-blue-900 text-yellow-300' : 'hover:bg-blue-700 text-white' }}">
+        {{ request()->routeIs('admin.belanjaAdmin') ? 'bg-blue-900 text-yellow-300' : 'hover:bg-blue-700 text-white' }}">
                             UMKM
                         </a>
                         <a href="{{ route('admin.galeriAdmin') }}"
                             class="flex items-center px-4 py-2 text-sm font-medium rounded-md
-              {{ request()->routeIs('admin.galeriAdmin') ? 'bg-blue-900 text-yellow-300' : 'hover:bg-blue-700 text-white' }}">
+        {{ request()->routeIs('admin.galeriAdmin') ? 'bg-blue-900 text-yellow-300' : 'hover:bg-blue-700 text-white' }}">
                             Galeri
                         </a>
-                        <a href="{{ route('admin.galeriAdmin') }}"
+                        <a href="{{ route('admin.potensiAdmin') }}"
                             class="flex items-center px-4 py-2 text-sm font-medium rounded-md
-              {{ request()->routeIs('admin.galeriAdmin') ? 'bg-blue-900 text-yellow-300' : 'hover:bg-blue-700 text-white' }}">
-                            Pengaduan
+        {{ request()->routeIs('admin.potensiAdmin') ? 'bg-blue-900 text-yellow-300' : 'hover:bg-blue-700 text-white' }}">
+                            Potensi
                         </a>
+                        <a href="{{ route('admin.profil_desa.index') }}"
+                            class="flex items-center px-4 py-2 text-sm font-medium rounded-md
+        {{ request()->routeIs('admin.profil_desa.index') ? 'bg-blue-900 text-yellow-300' : 'hover:bg-blue-700 text-white' }}">
+                            Profil Desa
+                        </a>
+                        {{-- <a href="{{ route('admin.pengaduanAdmin') }}"
+                            class="flex items-center px-4 py-2 text-sm font-medium rounded-md
+        {{ request()->routeIs('admin.pengaduanAdmin') ? 'bg-blue-900 text-yellow-300' : 'hover:bg-blue-700 text-white' }}">
+                            Pengaduan
+                        </a> --}}
                     </nav>
+
+                    <!-- Logout Button -->
+                    <div class="p-4 border-t border-blue-700">
+                        <form action="{{ route('admin.logout') }}" method="POST">
+                            @csrf
+                            <button type="submit"
+                                class="flex items-center w-full px-4 py-2 text-sm font-medium rounded-md bg-red-600 hover:bg-red-700 text-white">
+                                <i class="fas fa-sign-out-alt mr-2"></i> Logout
+                            </button>
+                        </form>
+                    </div>
+
 
                 </div>
                 {{-- <div class="p-4 border-t border-blue-700">

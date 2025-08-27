@@ -3,7 +3,7 @@
 @section('content')
 
 <section class="bg-blue-50">
-    <div class="mx-auto min-h-screen w-screen text-center py-24 px-4">
+    <div class="mx-auto min-h-screen w-screen text-center py-24">
         <!-- Judul -->
         <h1 class="mb-4 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl">
             UMKM Desa
