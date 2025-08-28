@@ -53,7 +53,7 @@ Route::prefix('admin')->name('admin.')->group(function () {
         Route::get('/dashboard', [AdminController::class, 'index'])->name('dashboard');
 
         // Profil Desa
-        Route::get('/profil-desa', [ProfilDesaController::class, 'profilAdmin'])->name('profil_desa.index');
+        Route::get('/profil-desa', [ProfilDesaController::class, 'profilAdmin'])->name('profilDesaAdmin');
         Route::get('/profil-desa/create', [ProfilDesaController::class, 'create'])->name('profil_desa.create');
         Route::post('/profil-desa', [ProfilDesaController::class, 'store'])->name('profil_desa.store');
         Route::get('/profil-desa/{id}/edit', [ProfilDesaController::class, 'edit'])->name('profil_desa.edit');

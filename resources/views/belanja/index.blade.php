@@ -3,7 +3,7 @@
 @section('content')
 
 <section class="bg-blue-50">
-    <div class="mx-auto min-h-screen w-screen text-center py-24">
+    <div class="mx-auto min-h-screen w-screen text-center py-36">
         <!-- Judul -->
         <h1 class="mb-4 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl">
             UMKM Desa
@@ -24,11 +24,8 @@
 
                     <!-- Konten UMKM -->
                     <div class="px-4 py-3 w-72">
-                        <p class="text-lg font-bold text-black truncate capitalize">
+                        <p class="text-lg font-bold text-black capitalize">
                             {{ $umkm->nama }}
-                        </p>
-                        <p class="text-sm text-gray-600 mt-2 truncate">
-                            {{ Str::limit(strip_tags($umkm->deskripsi), 60, '...') }}
                         </p>
                     </div>
                 </a>

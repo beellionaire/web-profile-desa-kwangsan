@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="bg-gray-100 py-8 mt-40">
+<div class="bg-white p-6 rounded-lg shadow py-8 my-40">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex flex-col md:flex-row -mx-4">
             <div class="md:flex-1 px-4">
@@ -40,7 +40,7 @@
 
                 <div>
                     <span class="font-bold text-gray-700">Deskripsi UMKM:</span>
-                    <p class="text-gray-600 text-sm mt-2">
+                    <p class="text-gray-600 text-sm mt-2 whitespace-pre-line text-justify">
                         {{ $umkm->deskripsi ?? 'Tidak ada deskripsi.' }}
                     </p>
                 </div>

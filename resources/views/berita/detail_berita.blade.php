@@ -2,15 +2,14 @@
 
 @section('content')
 
-<div class="max-w-6xl mx-auto py-8 px-4 lg:flex lg:gap-8 mt-32">
+<div class="max-w-6xl mx-auto py-8 px-4 lg:flex lg:gap-8 mt-20">
     <!-- Konten Utama -->
     <div class="lg:w-2/3 bg-white p-6 rounded-lg shadow">
         <!-- Judul -->
-        <h1 class="text-2xl font-bold text-gray-900 mb-2">{{ $berita->judul }}</h1>
-        <div class="flex items-center text-sm text-gray-500 space-x-4 mb-4">
+        <h1 class="text-2xl font-bold text-gray-900 mb-7">{{ $berita->judul }}</h1>
+        <div class="flex items-center text-sm text-gray-500 space-x-4 mb-4 justify-between">
             <span><i class="fa-regular fa-calendar"></i> {{ $berita->tanggal->translatedFormat('d M Y') }}</span>
             <span>Ditulis oleh <strong>{{ $berita->author }}</strong></span>
-            <span><i class="fa-regular fa-eye"></i> Dilihat {{ number_format($berita->views) }} kali</span>
         </div>
 
 
@@ -25,21 +24,24 @@
 
         <!-- Deskripsi Singkat -->
         @if(!empty($berita->deskripsi))
-        <p class="text-gray-600 text-base mb-4">
+        <p class="text-gray-600 text-base mb-4 whitespace-pre-line text-justify">
             {{ $berita->deskripsi }}
         </p>
         @endif
 
         <!-- Bagikan -->
-        <div class="mt-6 border-t pt-4">
+        <!-- <div class="mt-6 border-t pt-4">
             <span class="font-semibold">Bagikan:</span>
             <div class="flex space-x-3 mt-2">
-                <a href="#" class="text-blue-600 hover:text-blue-800"><i class="fab fa-facebook-f"></i></a>
-                <a href="#" class="text-sky-500 hover:text-sky-700"><i class="fab fa-twitter"></i></a>
-                <a href="#" class="text-green-500 hover:text-green-700"><i class="fab fa-whatsapp"></i></a>
+                <a href="#" class="text-blue-600 hover:text-blue-800"><img src="{{ asset('images/facebook.png') }}"
+                        class="w-8 h-8" alt="1"></a>
+                <a href="#" class="text-sky-500 hover:text-sky-700"><img src="{{ asset('images/instagram.png') }}"
+                        class="w-8 h-8" alt="1"></a>
+                <a href="#" class="text-green-500 hover:text-green-700"><img src="{{ asset('images/whatsapp.png') }}"
+                        class="w-8 h-8" alt="1"></a>
                 <a href="#" class="text-gray-700 hover:text-gray-900"><i class="fas fa-link"></i></a>
             </div>
-        </div>
+        </div> -->
     </div>
 
     <!-- Sidebar -->

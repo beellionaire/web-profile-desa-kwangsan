@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="max-w-4xl mx-auto py-8 px-4 mt-32">
+<div class="max-w-4xl mx-auto py-8 px-4 mt-24 mb-5">
     <div class="bg-white p-6 rounded-lg shadow">
 
         <!-- Judul -->
@@ -16,7 +16,7 @@
         @endif
 
         <!-- Konten -->
-        <div class="prose max-w-none">
+        <div class="prose max-w-none whitespace-pre-line">
             {!! $potensis->konten !!}
         </div>
     </div>

@@ -48,9 +48,9 @@
         {{ request()->routeIs('admin.potensiAdmin') ? 'bg-blue-900 text-yellow-300' : 'hover:bg-blue-700 text-white' }}">
                             Potensi
                         </a>
-                        <a href="{{ route('admin.profil_desa.index') }}"
+                        <a href="{{ route('admin.profilDesaAdmin') }}"
                             class="flex items-center px-4 py-2 text-sm font-medium rounded-md
-        {{ request()->routeIs('admin.profil_desa.index') ? 'bg-blue-900 text-yellow-300' : 'hover:bg-blue-700 text-white' }}">
+        {{ request()->routeIs('admin.profilDesaAdmin') ? 'bg-blue-900 text-yellow-300' : 'hover:bg-blue-700 text-white' }}">
                             Profil Desa
                         </a>
                         {{-- <a href="{{ route('admin.pengaduanAdmin') }}"

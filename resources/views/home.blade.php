@@ -24,7 +24,7 @@
 <!-- Hero Section -->
 
 <!-- Sambutan Kepala Desa -->
-<section class="bg-slate-100">
+<section class="bg-white/10">
     <div class="mx-auto flex flex-col h-[900px] w-screen items-center justify-center py-9 px-6">
         <div class="text-center mb-12 max-w-3xl">
             <h1 class="mb-4 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl">
@@ -36,7 +36,7 @@
             <!-- Foto Kepala Desa -->
             <div class="sm:w-1/2 p-10 flex justify-center">
                 <div class="image text-center">
-                    <img src="{{ $profil && $profil->foto ? asset('storage/' . $profil->foto) : asset('images/kades.jpg') }}"
+                    <img src="{{ $profil && $profil->foto ? asset('storage/' . $profil->foto) : asset('images/default.png') }}"
                         class="w-48 h-48 sm:w-[400px] sm:h-[400px] object-cover shadow-lg rounded-full">
                 </div>
             </div>
@@ -50,7 +50,7 @@
                     <span class="text-gray-500 border-indigo-600 capitalize font-bold text-xl">
                         Kepala Desa Kwangsan
                     </span>
-                    <p class="text-gray-700 mt-9 max-h-[250px] overflow-y-auto pr-2">
+                    <p class="text-gray-700 mt-9 max-h-[250px] overflow-y-auto pr-2 whitespace-pre-line">
                         {{ $profil ? $profil->kata_sambutan : 'Kata sambutan belum tersedia.' }}
                     </p>
                 </div>
@@ -78,7 +78,7 @@
 <!-- Peta Desa -->
 
 <!-- Struktur Organisasi -->
-<section class="bg-blue-50">
+<section class="bg-white/10">
     <div class="mx-auto min-h-screen w-screen text-center py-16 px-4 sm:px-6 lg:px-24 lg:max-w-[1500px]">
         <h1
             class="mb-4 text-3xl sm:text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl">
@@ -126,7 +126,7 @@
 
 
 <!-- Potensi Desa -->
-<section class="bg-blue-50">
+<section class="bg-white/10">
     <div class="mx-auto h-[750px] w-screen py-24">
 
         <!-- Judul -->
@@ -187,7 +187,7 @@
 <!-- Potensi Desa -->
 
 <!-- Produk Desa -->
-<section class="bg-blue-50">
+<section class="bg-white/10">
     <div class="mx-auto w-full max-w-7xl text-center py-24 px-4">
         <!-- Judul -->
         <h1 class="mb-4 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl">
@@ -234,7 +234,7 @@
 
 
 <!-- Berita Desa -->
-<section class="bg-slate-100">
+<section class="bg-white/10">
     <div class="mx-auto min-h-screen w-screen py-24 lg:max-w-[1500px]">
         <h1 class="mb-4 text-4xl font-extrabold text-gray-900 md:text-5xl lg:text-6xl text-center">
             Berita Desa
@@ -286,7 +286,7 @@
 <!-- Berita Desa -->
 
 <!-- Galeri Desa -->
-<section class="py-20 bg-white">
+<section class="bg-white/10">
     <div class="mx-auto min-h-screen w-screen lg:max-w-[1500px] text-center p-24">
         <h1 class="mb-4 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl">
             Galeri Desa

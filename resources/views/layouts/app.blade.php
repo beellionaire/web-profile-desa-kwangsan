@@ -139,8 +139,8 @@
             <div>
                 <h2 class="font-bold text-lg mb-4">Berita</h2>
                 <ul class="space-y-2 text-sm">
-                    <li><a href="#" class="hover:underline">Berita Terkini</a></li>
-                    <li><a href="#" class="hover:underline">Daftar UMKM</a></li>
+                    <li><a href="{{ route('berita.index') }}" class="hover:underline">Berita Terkini</a></li>
+                    <li><a href="{{ route('belanja.index') }}" class="hover:underline">Daftar UMKM</a></li>
                 </ul>
             </div>
 
@@ -148,10 +148,11 @@
             <div>
                 <h2 class="font-bold text-lg mb-4">Jelajahi</h2>
                 <ul class="space-y-2 text-sm">
-                    <li><a href="#" class="hover:underline">Profil Desa Kwangsan</a></li>
-                    <li><a href="#" class="hover:underline">Visi Misi Desa Kwangsan</a></li>
-                    <li><a href="#" class="hover:underline">Potensi Desa Kwangsan</a></li>
-                    <li><a href="#" class="hover:underline">Galeri Desa Kwangsan</a></li>
+                    <li><a href="{{ route('profilDesa.index') }}" class="hover:underline">Profil Desa Kwangsan</a></li>
+                    <li><a href="{{ route('profilDesa.index') }}" class="hover:underline">Visi Misi Desa Kwangsan</a>
+                    </li>
+                    <li><a href="{{ route('potensi.index') }}" class="hover:underline">Potensi Desa Kwangsan</a></li>
+                    <li><a href="{{ route('galeri.index') }}" class="hover:underline">Galeri Desa Kwangsan</a></li>
                 </ul>
             </div>
         </div>
@@ -164,17 +165,17 @@
 
 
     <!-- Tombol Pengaduan -->
-    <button id="btnPengaduan"
+    <!-- <button id="btnPengaduan"
         class="fixed bottom-5 right-5 bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-full shadow-lg flex items-center space-x-2 z-50">
         <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                 d="M17 8h2a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2v-8a2 2 0 012-2h2m6 4l4-4m0 0l-4-4m4 4H9" />
         </svg>
         <span>Pengaduan</span>
-    </button>
+    </button> -->
 
     <!-- Modal Floating Bottom Right -->
-    <div id="modalPengaduan" class="hidden fixed bottom-16 right-5 w-96 bg-white border rounded-lg shadow-xl z-50">
+    <!-- <div id="modalPengaduan" class="hidden fixed bottom-16 right-5 w-96 bg-white border rounded-lg shadow-xl z-50">
         <div class="flex justify-between items-center border-b px-4 py-2">
             <h2 class="font-bold">Form Pengaduan</h2>
             <button id="closePengaduan" class="text-gray-500 hover:text-gray-800">✕</button>
@@ -204,7 +205,7 @@
                 </div>
             </form>
         </div>
-    </div>
+    </div> -->
 
     <script>
         document.getElementById('btnPengaduan').addEventListener('click', function () {

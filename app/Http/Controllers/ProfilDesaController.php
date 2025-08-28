@@ -41,7 +41,7 @@ class ProfilDesaController extends Controller
 
         ProfilDesa::create($validated);
 
-        return redirect()->route('admin.profil_desa.index')->with('success', 'Profil Desa berhasil ditambahkan');
+        return redirect()->route('admin.profilDesaAdmin')->with('success', 'Profil Desa berhasil ditambahkan');
     }
 
     public function edit($id)
@@ -75,6 +75,6 @@ class ProfilDesaController extends Controller
 
         $profil->update($data);
 
-        return redirect()->route('admin.profil_desa.index')->with('success', 'Profil desa berhasil diperbarui!');
+        return redirect()->route('admin.profilDesaAdmin')->with('success', 'Profil desa berhasil diperbarui!');
     }
 }
