@@ -12,7 +12,6 @@
             <span>Ditulis oleh <strong>{{ $berita->author }}</strong></span>
         </div>
 
-
         <!-- Gambar -->
         <img src="{{ asset('storage/' . $berita->gambar) }}" alt="{{ $berita->judul }}"
             class="w-full h-auto rounded-lg mb-6">
