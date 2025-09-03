@@ -122,8 +122,9 @@ class BeritaController extends Controller
      */
     public function index()
     {
+        $title = "Berita | Desa Kwangsan";
         $beritas = Berita::latest()->paginate(6);
-        return view('berita.index', compact('beritas'));
+        return view('berita.index', compact('beritas', 'title'));
     }
 
     /**

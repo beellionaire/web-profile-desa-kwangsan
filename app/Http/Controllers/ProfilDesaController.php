@@ -10,8 +10,9 @@ class ProfilDesaController extends Controller
 {
     public function index()
     {
+        $title = "Profil Desa | Desa Kwangsan";
         $profil = ProfilDesa::first();
-        return view('profil_desa.index', compact('profil'));
+        return view('profil_desa.index', compact('title','profil'));
     }
 
     public function profilAdmin()

@@ -14,6 +14,7 @@ class HomeController extends Controller
 {
     public function index()
     {
+        $title = "Beranda | Desa Kwangsan";
         $beritas = Berita::orderByDesc('tanggal')->take(8)->get();
         $struktur = StrukturOrganisasi::take(8)->get();
         $umkms = Belanja::latest()->get();
@@ -21,6 +22,6 @@ class HomeController extends Controller
         $potensi = Potensi::latest()->get();
         $profil = ProfilDesa::first();
 
-        return view('home', compact('beritas', 'struktur', 'umkms', 'galeris', 'potensi', 'profil'));
+        return view('home', compact('title', 'beritas', 'struktur', 'umkms', 'galeris', 'potensi', 'profil'));
     }
 }

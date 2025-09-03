@@ -8,12 +8,15 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 
     @stack('styles')
+
+    <link rel="icon" href="{{ asset('images/logo_kab_kra.png') }}" type="image/png">
+
 </head>
 
 <body class="bg-gray-50 min-h-screen w-screen flex flex-col overflow-x-hidden">
 
     <!-- Navbar -->
-    <nav id="navbar" class="fixed w-full z-50 transition-colors duration-300 bg-blue-700">
+    <nav id="navbar" class="fixed w-full z-50 transition-colors duration-300 bg-green-700">
         <div class="w-screen flex flex-wrap items-center justify-between mx-auto p-6">
             <a href="/" class="flex items-center space-x-3 rtl:space-x-reverse">
                 <img src="{{ asset('images/logo_kab_kra.png') }}" alt="Logo" class="h-10 w-auto">
@@ -62,7 +65,7 @@
     </main>
 
     <!-- Footer -->
-    <footer class="bg-blue-800 text-white">
+    <footer class="bg-green-800 text-white">
         <div class="mx-auto max-w-[1700px] px-6 py-12 grid grid-cols-1 md:grid-cols-4 gap-8">
 
             <!-- Kolom 1: Logo & Alamat -->
@@ -158,7 +161,7 @@
         </div>
 
         <!-- Copyright -->
-        <div class="text-center text-sm py-4 bg-blue-900">
+        <div class="text-center text-sm py-4 bg-green-900">
             © 2025 KKN 28 Universitas Muhammadiyah Karanganyar™
         </div>
     </footer>

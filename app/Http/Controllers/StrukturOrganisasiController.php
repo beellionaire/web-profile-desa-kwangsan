@@ -118,7 +118,8 @@ class StrukturOrganisasiController extends Controller
      */
     public function index()
     {
+        $title = "Perangkat Desa | Desa Kwangsan";
         $struktur = StrukturOrganisasi::all();
-        return view('struktur_organisasi.index', compact('struktur'));
+        return view('struktur_organisasi.index', compact('struktur', 'title'));
     }
 }

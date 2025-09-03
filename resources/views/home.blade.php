@@ -60,9 +60,6 @@
 </section>
 <!-- Sambutan Kepala Desa -->
 
-
-
-
 <!-- Peta Desa -->
 <section class="bg-white/10">
     <div class="mx-auto flex flex-col h-[900px] w-screen items-center justify-center py-9 px-6 lg:max-w-[1500px]">
@@ -77,20 +74,24 @@
 </section>
 <!-- Peta Desa -->
 
+
 <!-- Struktur Organisasi -->
 <section class="bg-white/10">
-    <div class="mx-auto min-h-screen w-screen text-center py-16 px-4 sm:px-6 lg:px-24 lg:max-w-[1500px]">
-        <h1
-            class="mb-4 text-3xl sm:text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl">
-            Struktur Perangkat Desa
-        </h1>
-        <p class="mb-8 text-base sm:text-lg font-normal text-gray-500 lg:text-xl sm:px-8 lg:px-48">
-            Susunan perangkat desa yang berperan dalam pembangunan dan pelayanan masyarakat.
-        </p>
+    <div class="mx-auto w-full min-h-screen py-24 lg:max-w-[1500px] px-8 sm:px-12 md:px-16">
+        <!-- Judul -->
+        <div class="text-center">
+            <h1
+                class="mb-4 text-3xl sm:text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl">
+                Struktur Perangkat Desa
+            </h1>
+            <p class="mb-8 text-base sm:text-lg font-normal text-gray-500 lg:text-xl sm:px-8 lg:px-48">
+                Susunan perangkat desa yang berperan dalam pembangunan dan pelayanan masyarakat.
+            </p>
+        </div>
 
+        <!-- Grid -->
         <div class="container mx-auto max-w-7xl mt-12 mb-16 px-2 sm:px-4">
-            <!-- Team Grid -->
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-8">
                 @forelse($struktur as $item)
                 <div class="group">
                     <div class="relative overflow-hidden rounded-xl mb-4">
@@ -104,11 +105,13 @@
                     </div>
                 </div>
                 @empty
-                <p class="text-gray-500 col-span-4">Belum ada data struktur perangkat desa.</p>
+                <p class="text-gray-500 col-span-full">Belum ada data struktur perangkat desa.</p>
                 @endforelse
             </div>
+
         </div>
 
+        <!-- Tombol -->
         <div class="flex flex-col space-y-4 sm:flex-row sm:justify-center sm:space-y-0">
             <a href="{{ route('struktur_organisasi.index') }}"
                 class="inline-flex justify-center items-center py-3 px-6 text-base font-medium text-center text-white rounded-lg bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 transition-all duration-300">
@@ -127,9 +130,8 @@
 
 <!-- Potensi Desa -->
 <section class="bg-white/10">
-    <div class="mx-auto h-[750px] w-screen py-24">
-
-        <!-- Judul -->
+    <div class="mx-auto w-full min-h-screen py-24 lg:max-w-[1500px] px-8 sm:px-12 md:px-16">
+        <!-- Judul Section -->
         <div class="text-center">
             <h1 class="mb-4 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl">
                 Potensi Desa
@@ -140,7 +142,7 @@
         </div>
 
         <!-- Konten Kartu -->
-        <div class="flex flex-col sm:flex-row flex-wrap justify-center items-center gap-4 p-4 bg-blue-50 mx-auto">
+        <div class="flex flex-col sm:flex-row flex-wrap justify-center items-center gap-4 p-4 mx-auto">
 
             @forelse($potensi as $item)
             <a href="{{ route('potensi.detail', $item->slug) }}"
@@ -148,14 +150,16 @@
                 <img alt="{{ $item->judul }}"
                     src="{{ $item->gambar ? asset('storage/' . $item->gambar) : asset('images/default.png') }}"
                     class="absolute inset-0 h-full w-full rounded-lg object-cover opacity-75 transition-opacity group-hover:opacity-50" />
-                <div class="relative p-4 sm:p-6 lg:p-8">
+
+                <div class="relative p-4 sm:p-6 lg:p-8 text-left">
                     <p class="text-sm font-extrabold tracking-widest text-blue-600 uppercase">
                         <span class="bg-yellow-300 text-gray-800 px-2 py-1 rounded">
                             {{ $item->kategori ?? 'Potensi Desa' }}
                         </span>
                     </p>
 
-                    <p class="text-xl font-bold text-white sm:text-2xl">{{ $item->judul }}</p>
+                    <p class="text-xl font-bold text-white sm:text-2xl mt-2">{{ $item->judul }}</p>
+
                     <div class="mt-32 sm:mt-48 lg:mt-64">
                         <div
                             class="translate-y-8 transform opacity-0 transition-all group-hover:translate-y-0 group-hover:opacity-100">
@@ -184,11 +188,12 @@
         </div>
     </div>
 </section>
-<!-- Potensi Desa -->
+
 
 <!-- Produk Desa -->
 <section class="bg-white/10">
-    <div class="mx-auto w-full max-w-7xl text-center py-24 px-4">
+    <div class="mx-auto w-full min-h-screen py-24 lg:max-w-[1500px] px-8 sm:px-12 md:px-16 text-center">
+
         <!-- Judul -->
         <h1 class="mb-4 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl">
             UMKM Desa
@@ -269,17 +274,16 @@
                 </div>
                 @endforeach
             </div>
-        </div>
-
-        <div class="flex flex-col space-y-4 sm:flex-row sm:justify-center sm:space-y-0">
-            <a href="{{ route('berita.index') }}"
-                class="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-white rounded-lg bg-blue-700 hover:bg-blue-800 transition-all duration-300">
-                Lihat Semua
-                <svg class="w-3.5 h-3.5 ms-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
-                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                        d="M1 5h12m0 0L9 1m4 4L9 9" />
-                </svg>
-            </a>
+            <div class="flex flex-col space-y-4 sm:flex-row sm:justify-center sm:space-y-0">
+                <a href="{{ route('berita.index') }}"
+                    class="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-white rounded-lg bg-blue-700 hover:bg-blue-800 transition-all duration-300">
+                    Lihat Semua
+                    <svg class="w-3.5 h-3.5 ms-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M1 5h12m0 0L9 1m4 4L9 9" />
+                    </svg>
+                </a>
+            </div>
         </div>
     </div>
 </section>
@@ -287,54 +291,57 @@
 
 <!-- Galeri Desa -->
 <section class="bg-white/10">
-    <div class="mx-auto min-h-screen w-screen lg:max-w-[1500px] text-center p-24">
-        <h1 class="mb-4 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl">
+    <div class="mx-auto min-h-screen w-full py-24 lg:max-w-[1500px]">
+        <h1
+            class="mb-4 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl text-center">
             Galeri Desa
         </h1>
-        <p class="mb-8 text-lg font-normal text-gray-500 lg:text-xl sm:px-16 lg:px-48">
+        <p class="mb-8 text-lg font-normal text-gray-500 lg:text-xl sm:px-16 lg:px-48 text-center">
             Kumpulan dokumentasi kegiatan dan potret Desa Kwangsan.
         </p>
 
-        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-            @forelse ($galeris as $item)
-            <!-- Gallery Item -->
-            <div class="group relative overflow-hidden rounded-lg aspect-square">
-                <img src="{{ $item->foto ? asset('storage/' . $item->foto) : 'https://via.placeholder.com/400x400?text=No+Image' }}"
-                    alt="{{ $item->judul }}"
-                    class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
-                <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent
-           opacity-0 group-hover:opacity-100 transition-opacity duration-300
-           flex items-end justify-start p-6">
-                    <div class="translate-y-4 group-hover:translate-y-0 transition-transform duration-300 text-left">
-                        <h3 class="text-white text-xl font-bold">{{ $item->judul }}</h3>
-                        <p class="text-white/80 mt-1">
-                            {{ $item->tanggal ? \Carbon\Carbon::parse($item->tanggal)->translatedFormat('F Y') :
-                            $item->created_at->translatedFormat('F Y') }}
-                        </p>
+        <div class="px-8 py-10 mx-auto lg:max-w-screen-2xl sm:max-w-xl md:max-w-full sm:px-12 md:px-16">
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                @forelse ($galeris as $item)
+                <!-- Gallery Item -->
+                <div class="group relative overflow-hidden rounded-lg aspect-square">
+                    <img src="{{ $item->foto ? asset('storage/' . $item->foto) : 'https://via.placeholder.com/400x400?text=No+Image' }}"
+                        alt="{{ $item->judul }}"
+                        class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent
+                        opacity-0 group-hover:opacity-100 transition-opacity duration-300
+                        flex items-end justify-start p-6">
+                        <div
+                            class="translate-y-4 group-hover:translate-y-0 transition-transform duration-300 text-left">
+                            <h3 class="text-white text-xl font-bold">{{ $item->judul }}</h3>
+                            <p class="text-white/80 mt-1">
+                                {{ $item->tanggal ? \Carbon\Carbon::parse($item->tanggal)->translatedFormat('F Y') :
+                                $item->created_at->translatedFormat('F Y') }}
+                            </p>
+                        </div>
                     </div>
                 </div>
-
+                @empty
+                <p class="text-gray-500 col-span-full">Belum ada foto di galeri.</p>
+                @endforelse
             </div>
-            @empty
-            <p class="text-gray-500 col-span-full">Belum ada foto di galeri.</p>
-            @endforelse
-        </div>
 
-        <div class="flex flex-col space-y-4 sm:flex-row sm:justify-center sm:space-y-0 mt-12">
-            <a href="{{ route('galeri.index') }}"
-                class="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-white rounded-lg bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 transition-all duration-300">
-                Lihat Semua
-                <svg class="w-3.5 h-3.5 ms-2 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                    fill="none" viewBox="0 0 14 10">
-                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                        d="M1 5h12m0 0L9 1m4 4L9 9" />
-                </svg>
-            </a>
+            <div class="flex flex-col space-y-4 sm:flex-row sm:justify-center sm:space-y-0 mt-12">
+                <a href="{{ route('galeri.index') }}"
+                    class="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-white rounded-lg bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 transition-all duration-300">
+                    Lihat Semua
+                    <svg class="w-3.5 h-3.5 ms-2 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                        fill="none" viewBox="0 0 14 10">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M1 5h12m0 0L9 1m4 4L9 9" />
+                    </svg>
+                </a>
+            </div>
         </div>
     </div>
 </section>
-
 <!-- Galeri Desa -->
+
 
 @endsection
 

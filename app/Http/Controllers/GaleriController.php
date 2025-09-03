@@ -9,8 +9,9 @@ class GaleriController extends Controller
 {
     public function index()
     {
+        $title = "Galeri Desa | Desa Kwangsan";
         $galeris = Galeri::latest()->get();
-        return view('galeri.index', compact('galeris'));
+        return view('galeri.index', compact('galeris', 'title'));
     }
 
     public function galeriAdmin()
